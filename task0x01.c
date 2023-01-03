@@ -1,4 +1,4 @@
-# Write a C program to print hello world
+// Write a C program to print hello world
 
 
 #include <stdio.h>
