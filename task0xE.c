@@ -1,4 +1,4 @@
-// Write a c program to convert days to years, weeks and months
+// Write a c program to convert days to years, weeks and days
 
 
 
