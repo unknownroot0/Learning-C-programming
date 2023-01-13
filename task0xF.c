@@ -1,46 +1,48 @@
 /* Write a C program to find the largest, larger and the smallest of 3 numbers and print all 3 in that order.
 
 
+
 #include <stdio.h>
- 
-int main()
-{
+
+int main() {
     int num1, num2, num3;
- 
     printf("Enter three numbers: ");
     scanf("%d %d %d", &num1, &num2, &num3);
  
-    if (num1 >= num2)
-    {
-        if (num1 >= num3)
-            printf("Largest number = %d", num1);
-        else
-            printf("Largest number = %d", num3);
-    }
-    else
-    {
-        if (num2 >= num3)
-            printf("Largest number = %d", num2);
-        else
-            printf("Largest number = %d", num3);
+    int largest, larger, smallest;
+ 
+    if (num1 >= num2 && num1 >= num3) {
+        largest = num1;
+        if (num2 >= num3) {
+            larger = num2;
+            smallest = num3;
+        } else {
+            larger = num3;
+            smallest = num2;
+        }
+    } else if (num2 >= num1 && num2 >= num3) {
+        largest = num2;
+        if (num1 >= num3) {
+            larger = num1;
+            smallest = num3;
+        } else {
+            larger = num3;
+            smallest = num1;
+        }
+    } else {
+        largest = num3;
+        if (num1 >= num2) {
+            larger = num1;
+            smallest = num2;
+        } else {
+            larger = num2;
+            smallest = num1;
+        }
     }
  
-    if (num1 <= num2)
-    {
-        if (num1 <= num3)
-            printf("\nSmallest number = %d", num1);
-        else
-            printf("\nSmallest number = %d", num3);
-    }
-    else
-    {
-        if (num2 <= num3)
-            printf("\nSmallest number = %d", num2);
-        else
-            printf("\nSmallest number = %d", num3);
-    }
- 
-    printf("\nLarger number = %d\n", (num1 + num2 + num3) - (num1 + num2 + num3) / 3);
+    printf("The largest number is %d\n", largest);
+    printf("The larger number is %d\n", larger);
+    printf("The smallest number is %d\n", smallest);
  
     return 0;
 }
